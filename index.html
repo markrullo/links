@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rullo.ca Links</title>
+
+    <!-- Load compiled Tailwind CSS (built from src/input.css via the Tailwind CLI) -->
+    <link rel="stylesheet" href="tailwind.css" />
+  </head>
+
+  <!--
+    bg-gradient-to-br  — diagonal gradient background (top-left → bottom-right)
+    from-slate-900      — gradient starts at a very dark navy/slate colour
+    to-indigo-900       — gradient ends at a deep indigo colour
+    min-h-screen        — body is at least as tall as the viewport
+    font-sans           — use the browser's default sans-serif font stack
+    text-white          — default text colour for everything inside
+  -->
+  <body class="bg-gradient-to-br from-slate-900 to-indigo-900 min-h-screen font-sans text-white">
+
+    <!--
+      max-w-2xl   — cap the content width at ~42rem so it stays readable on wide screens
+      mx-auto     — centre the container horizontally with auto left/right margins
+      px-4        — 1rem of horizontal padding on both sides (prevents content touching screen edges)
+      py-12       — 3rem of vertical padding top and bottom
+    -->
+    <div class="max-w-2xl mx-auto px-4 py-12">
+
+      <!-- ── HEADER ─────────────────────────────────────────────────── -->
+      <!--
+        text-center  — centre-align all text in this block
+        mb-10        — 2.5rem of bottom margin to separate the header from the cards
+      -->
+      <header class="text-center mb-10">
+
+        <!--
+          text-4xl      — large font size (~2.25rem)
+          font-extrabold — very heavy font weight for strong visual impact
+          tracking-tight — tighten letter-spacing slightly for display headings
+        -->
+        <h1 class="text-4xl font-extrabold tracking-tight">
+          Rullo.ca Links
+        </h1>
+
+        <!--
+          mt-2         — 0.5rem top margin to give a little breathing room under the title
+          text-indigo-300 — a soft, muted indigo to complement the gradient background
+          text-sm      — slightly smaller text so the subtitle reads as secondary information
+        -->
+        <p class="mt-2 text-indigo-300 text-sm">
+          A curated collection of links — just for you 🔗
+        </p>
+      </header>
+
+      <!-- ── LINK CARDS ─────────────────────────────────────────────── -->
+      <!--
+        space-y-4  — add 1rem of vertical space between each direct child element
+                     (equivalent to margin-top on every child after the first)
+      -->
+      <main class="space-y-4">
+
+        <!-- ── Card template ──────────────────────────────────────────
+             To add a new link, copy one of the <a> blocks below and
+             change the href, emoji, title, and description.
+        ──────────────────────────────────────────────────────────────── -->
+
+        <!--
+          group           — marks this element as a "group" so child elements can respond
+                            to its hover state with the group-hover: prefix
+          flex            — display children in a row (flex row is the default direction)
+          items-center    — vertically centre-align children along the cross axis
+          gap-4           — 1rem gap between each flex child
+          bg-white/10     — white background at 10% opacity (creates a frosted-glass look)
+          hover:bg-white/20 — increase opacity to 20% when the user hovers over the card
+          backdrop-blur-sm  — subtle blur effect on the transparent background
+          rounded-2xl     — rounds the corners with a 1rem radius
+          p-5             — 1.25rem of padding on all sides
+          transition-all  — smoothly animate all CSS property changes
+          duration-200    — animation completes in 200 ms (fast, snappy feel)
+          cursor-pointer  — show a hand cursor to signal the element is clickable
+          no-underline    — override the browser default underline on <a> tags (set via Tailwind's 'no-underline' utility)
+        -->
+        <a
+          href="https://www.youtube.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex items-center gap-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-2xl p-5 transition-all duration-200 cursor-pointer no-underline"
+        >
+          <!-- Emoji icon wrapper -->
+          <!--
+            text-3xl       — make the emoji large enough to act as a visual anchor
+            leading-none   — remove any extra line-height around the icon
+          -->
+          <span class="text-3xl leading-none" aria-hidden="true">📺</span>
+
+          <!-- Text content -->
+          <!--
+            flex-1   — let this block grow to fill the remaining horizontal space,
+                       pushing the arrow icon to the far right
+            min-w-0  — prevent this block from overflowing its flex container
+                       (important when text is long)
+          -->
+          <div class="flex-1 min-w-0">
+            <!--
+              font-semibold  — medium-heavy weight for the link title
+              text-white     — keep the title bright white
+              truncate       — clip text with an ellipsis if it overflows one line
+            -->
+            <p class="font-semibold text-white truncate">YouTube</p>
+
+            <!--
+              text-sm        — smaller secondary text
+              text-indigo-300 — muted indigo to visually subordinate the description
+              truncate        — clip long descriptions with an ellipsis
+            -->
+            <p class="text-sm text-indigo-300 truncate">Videos, music, and more</p>
+          </div>
+
+          <!-- Arrow icon — only visible on hover -->
+          <!--
+            opacity-0              — hidden by default
+            group-hover:opacity-100 — fade in when the parent card is hovered
+            transition-opacity     — animate the opacity change smoothly
+            text-indigo-300        — soft indigo to match the description colour
+          -->
+          <span class="opacity-0 group-hover:opacity-100 transition-opacity text-indigo-300" aria-hidden="true">→</span>
+        </a>
+
+        <!-- ── Card 2 ──────────────────────────────────────────────── -->
+        <a
+          href="https://www.google.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex items-center gap-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-2xl p-5 transition-all duration-200 cursor-pointer no-underline"
+        >
+          <span class="text-3xl leading-none" aria-hidden="true">🔍</span>
+          <div class="flex-1 min-w-0">
+            <p class="font-semibold text-white truncate">Google</p>
+            <p class="text-sm text-indigo-300 truncate">Search the web</p>
+          </div>
+          <span class="opacity-0 group-hover:opacity-100 transition-opacity text-indigo-300" aria-hidden="true">→</span>
+        </a>
+
+        <!-- ── Card 3 ──────────────────────────────────────────────── -->
+        <a
+          href="https://www.netflix.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex items-center gap-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-2xl p-5 transition-all duration-200 cursor-pointer no-underline"
+        >
+          <span class="text-3xl leading-none" aria-hidden="true">🎬</span>
+          <div class="flex-1 min-w-0">
+            <p class="font-semibold text-white truncate">Netflix</p>
+            <p class="text-sm text-indigo-300 truncate">Movies and TV shows</p>
+          </div>
+          <span class="opacity-0 group-hover:opacity-100 transition-opacity text-indigo-300" aria-hidden="true">→</span>
+        </a>
+
+        <!-- ── Card 4 ──────────────────────────────────────────────── -->
+        <a
+          href="https://www.facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex items-center gap-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-2xl p-5 transition-all duration-200 cursor-pointer no-underline"
+        >
+          <span class="text-3xl leading-none" aria-hidden="true">👥</span>
+          <div class="flex-1 min-w-0">
+            <p class="font-semibold text-white truncate">Facebook</p>
+            <p class="text-sm text-indigo-300 truncate">Stay connected with family and friends</p>
+          </div>
+          <span class="opacity-0 group-hover:opacity-100 transition-opacity text-indigo-300" aria-hidden="true">→</span>
+        </a>
+
+        <!-- ── Card 5 ──────────────────────────────────────────────── -->
+        <a
+          href="https://www.amazon.ca"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex items-center gap-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-2xl p-5 transition-all duration-200 cursor-pointer no-underline"
+        >
+          <span class="text-3xl leading-none" aria-hidden="true">🛒</span>
+          <div class="flex-1 min-w-0">
+            <p class="font-semibold text-white truncate">Amazon.ca</p>
+            <p class="text-sm text-indigo-300 truncate">Online shopping in Canada</p>
+          </div>
+          <span class="opacity-0 group-hover:opacity-100 transition-opacity text-indigo-300" aria-hidden="true">→</span>
+        </a>
+
+      </main>
+
+      <!-- ── FOOTER ──────────────────────────────────────────────────── -->
+      <!--
+        mt-12       — 3rem top margin to push the footer well below the cards
+        text-center — centre-align the footer text
+        text-xs     — extra-small text so the footer fades into the background
+        text-white/30 — white at 30% opacity — very subtle, unobtrusive footer
+      -->
+      <footer class="mt-12 text-center text-xs text-white/30">
+        &copy; 2025 Rullo.ca &mdash; Made with ❤️
+      </footer>
+    </div>
+
+  </body>
+</html>
